@@ -1,0 +1,39 @@
+{
+  "name": "pico-client",
+  "version": "2.0.0-dev",
+  "description": "Client for the Pico web framework",
+  "keywords": [
+    "pico",
+    "python"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fergalwalsh/pico.git"
+  },
+  "author": {
+    "name": "Fergal Walsh"
+  },
+  "license": "BSD-3-Clause",
+  "main": "pico.js",
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "es6-promise": "^3.2.1",
+    "eventsource": "^0.2.1",
+    "form-data": "^1.0.1",
+    "isomorphic-fetch": "^2.2.1"
+  },
+  "scripts": {
+    "prepublish": "browserify pico.js --standalone pico | uglifyjs > dist/pico.min.js",
+    "test": "node test.js"
+  },
+  "devDependencies": {
+    "blue-tape": "^1.0.0",
+    "eslint": "^3.7.1",
+    "eslint-config-standard": "^6.2.0",
+    "eslint-plugin-promise": "^2.0.1",
+    "eslint-plugin-standard": "^2.0.1",
+    "tape": "^4.6.2"
+  }
+}
